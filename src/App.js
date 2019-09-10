@@ -8,6 +8,9 @@ import Alert from './components/layouts/Alert';
 import About from './components/pages/About';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 import './App.css';
+
+import GithubState from './context/github/GithubState';
+
 import axios from 'axios';
 
 
@@ -74,7 +77,8 @@ const App = () => {
   };
 
   return (
-    <Router>
+    <GithubState>
+      <Router>
       <div className="App">
         <Navbar iconName="fab fa-github"/> 
         <div className="container">
@@ -96,6 +100,7 @@ const App = () => {
         </div>        
       </div>
     </Router>
+    </GithubState>
   );
 }
 
